@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+    .guang{
+        position: relative;
+        display: inline-block;
+        width: 220px;
+        height: 80px;
+        color: rgb(255, 255, 255);
+        line-height: 80px;
+        font-size: 35px;
+        font-family: sans-serif;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        border-radius: 30px;
+        background: linear-gradient(90deg,rgb(39, 122, 218),rgb(74, 230, 121),rgb(201, 214, 13),rgb(226, 20, 233),rgb(16, 172, 219));
+        background-size: 400%;
+        z-index: 1;
+        text-shadow: 0 0 5px white,
+                     0 0 5px white;
+    }
+    .guang:hover{
+        animation: move 5s linear alternate infinite;
+    }
+    @keyframes move{
+        0%{
+           background-position: 0%;
+        }
+        100%{
+            background-position: 100%;
+        }
+    }
+    .guang::before{
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 240px;
+        height: 100px;
+        background: linear-gradient(90deg,rgb(39, 122, 218),rgb(74, 230, 121),rgb(243, 169, 10),rgb(226, 20, 233),rgb(16, 172, 219));
+        background-size: 400%;
+        opacity: 0;
+        z-index: -1;
+        border-radius: 45px;
+        transition: 0.6s;
+       
+    }
+    .guang:hover::before{
+        filter: blur(15px);
+        opacity: 1;
+        animation: move 8s linear alternate infinite;
+    }
+</style>
+<body>
+    <a href="#" class="guang">button</a>
+</body>
+</html>
